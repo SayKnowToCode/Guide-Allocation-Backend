@@ -1,0 +1,24 @@
+[{
+    "name": "Dr. Prasenjit Bhavathankar",
+    "email": "p_bhavathankar@spit.ac.in",
+    "department": "Computer Engineering",
+    "designation": "Associate Professor",
+    "domains": ["Computer Networks", "Wireless Ad-Hoc Networks","Wireless Sensor Network", "IoT", "Software DefinedNetwork", "AI", "Machine Learning"],
+    "count": 3
+  },
+  {
+    "name": "Prof. Pramod Bide",
+    "email": "pramod_bide@spit.ac.in",
+    "department": "Computer Engineering",
+    "designation": "Associate Professor",
+    "domains":[ "Machine Learning","Deep learning", "Data Mining", "NLP","Data Analytics", "IoT", "Social Network Mining","Information Security"],
+    "count": 3
+  },
+  {
+    "name": "Dr. Kailas Devadkar",
+    "email": "kailas_devadkar@spit.ac.in",
+    "department": "Computer Engineering",
+    "designation": "Associate Professor",
+    "domains": ["Machine Learning", "Artificial Intelligence", "Datawarehousing and Mining","Big Data Analytics","Distributed Systems", "Cloud Computing", "Mobile cloud"],
+    "count": 3
+}]

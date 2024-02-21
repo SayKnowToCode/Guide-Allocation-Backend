@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema
 
-const userSchema = new mongoose.Schema({
+const userSchema = new Schema({
     teamName: {
         type: String,
         required: [true, "Please enter team name"],
         unique: true // Ensure team names are unique
+        // But this unique is case sensitive, we need to handle this
     },
     password: {
         type: String,
@@ -31,4 +32,4 @@ const userSchema = new mongoose.Schema({
     } ]     
 });
 
-module.exports = mongoose.model('User', userSchema)
+module.exports = mongoose.model('Student', userSchema)

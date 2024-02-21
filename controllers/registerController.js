@@ -1,5 +1,4 @@
-const User = require('../model/User');
-const { ObjectId } = require('mongodb');
+const Student = require('../model/Student');
 // const bcrypt = require('bcrypt');
 
 const handleNewUser = async (req, res) => {
@@ -8,7 +7,7 @@ const handleNewUser = async (req, res) => {
     if (!teamName || !password) return res.status(400).json({ 'message': 'Username and password are required.' });
 
     // check for duplicate usernames in the db
-    const duplicate = await User.findOne({ teamName }).exec();
+    const duplicate = await Student.findOne({ teamName }).exec();
     if (duplicate) return res.sendStatus(409); //Conflict 
 
     try {
@@ -17,7 +16,7 @@ const handleNewUser = async (req, res) => {
 
         //create and store the new user
       
-            const result = await User.create({
+            const result = await Student.create({
                 teamName,
                 password,
                 membersList: [

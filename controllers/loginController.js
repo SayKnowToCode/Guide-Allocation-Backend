@@ -1,10 +1,10 @@
 // const bcrypt = require('bcrypt');
-const User = require('../model/User');
+const Student = require('../model/Student');
 
 const handleLogin = async (req, res) => {
-    const { teamName, password } = req.body;
+    const { teamName,facultyName, password,role } = req.body;
     if (!teamName || !password) return res.status(400).json({ 'message': 'Teamname and password are required.' });
-    const foundUser = await User.findOne({teamName}).exec()
+    const foundUser = await Student.findOne({teamName}).exec()
     if (!foundUser) return res.sendStatus(401); //Unauthorized 
 
     // evaluate password 
