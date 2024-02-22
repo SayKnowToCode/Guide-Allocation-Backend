@@ -1,18 +1,19 @@
 const Guide = require('../model/Guide')
 
-const sendData = async (req,res) => {
+const handleFunc = async (req,res) => {
+
+    const {facultyName,teamName} = req.body
 
     try {
         // Fetch all documents from the Guide collection
-        const guides = await Guide.find();
-
-        res.status(200).json(guides)
-
-        // res.status(200).json({
-        //     success: true,
-        //     data: guides,
-        //     message: 'Data retrieved successfully'
-        // });
+        console.log('here');
+        const guide = await Guide.findOne({name : facultyName}).exec();
+        
+        guide.count -= 1;
+        const result = await guide.save()
+        
+        res.status(200).json(result);
+        console.log("Successful accept");
     } catch (error) {
         // Handle errors and send an error response
         console.error('Error fetching data:', error);
@@ -25,4 +26,4 @@ const sendData = async (req,res) => {
 
 }
 
-module.exports = {sendData}
+module.exports = {handleFunc}
