@@ -1,0 +1,341 @@
+[{
+  
+  "name": "Dr. Prasenjit Bhavathankar",
+  "email": "p_bhavathankar@spit.ac.in",
+  "department": "Computer Engineering",
+  "designation": "Associate Professor",
+  "domains": ["Computer Networks", "Wireless Ad-Hoc Networks","Wireless Sensor Network", "IoT", "Software DefinedNetwork", "AI", "Machine Learning"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+  
+  "name": "Prof. Pramod Bide",
+  "email": "pramod_bide@spit.ac.in",
+  "department": "Computer Engineering",
+  "designation": "Associate Professor",
+  "domains": ["Machine Learning","Deep learning","Data Mining","NLP","Data Analytics", "IoT", "Social Network Mining","Information Security"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+ 
+  "name": "Dr. Kailas Devadkar",
+  "email": "kailas_devadkar@spit.ac.in",
+  "department": "Computer Engineering",
+  "designation": "Associate Professor",
+  "domains": ["Machine Learning", "Artificial Intelligence", "Datawarehousing and Mining", "Big Data Analytics","Distributed Systems", "Cloud Computing", "Mobile cloud"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+  
+  "name": "Dr. Sudhir N. Dhage",
+  "email": "sudhir_dhage@spit.ac.in",
+  "department": "Computer Engineering",
+  "designation": "Professor",
+  "domains": ["Machine Learning", "Artificial Intelligence","Data Mining","NLP", "Big Data Analytics", "IoT", "Parallel and DistributedSystems","Cloud Computing", "Brain Cognitive science","Soft Computing", "Pattern Recognition", "WSN"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+  
+  "name": "Dr. Surekha Dholay",
+  "email": "surekha_dholay@spit.ac.in",
+  "department": "Computer Engineering",
+  "designation": "Associate Professor",
+  "domains": ["Deep Learning", "Computer Vision", "Machine Learning", "Image Processing", "Soft Computing"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+  
+  "name": "Prof. Sunil Ghane",
+  "email": "sunil_ghane@spit.ac.in",
+  "department": "Computer Engineering",
+  "designation": "Associate Professor",
+  "domains": ["Data Mining", "Parallel Algorithm","Algorithm", "Artificial Intelligence","IoT", "Machine learning"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+  
+  "name": "Prof. A. A. Godbole",
+  "email": "anand_godbole@spit.ac.in",
+  "department": "Computer Engineering",
+  "designation": "Associate Professor",
+  "domains": ["Machine Learning", "Data Mining" , "NLP" , "AI Deep learning"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+  
+  "name": "Prof. Reeta Koshy",
+  "email": "reeta_koshy@spit.ac.in",
+  "department": "Computer Engineering",
+  "designation": "Associate Professor",
+  "domains": ["NLP", "Data Science", "Cloud Computing", "Big Data Analytics", "AI", "Machine Learning and IoT"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+  
+  "name": "Prof. Swapnali Kurhade",
+  "email": "swapnali.kurhade@spit.ac.in",
+  "department": "Computer Engineering",
+  "designation": "Associate Professor",
+  "domains": ["Deep Learning", "Machine Learning", "Information Retrieval", "Data Analytics"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+  
+  "name": "Dr. Anant Nimkar",
+  "email": "anant_nimkar@spit.ac.in",
+  "department": "Computer Engineering",
+  "designation": "Associate Professor",
+  "domains": ["Information & System Security","Artificial Intelligence & Machine Learning", "Distributed Algorithms", "Hard computing","Soft Computing"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+ 
+  "name": "Prof. Jyoti Ramteke",
+  "email": "jyoti_ramteke@spit.ac.in",
+  "department": "Computer Engineering",
+  "designation": "Associate Professor",
+  "domains": ["Machine Learning", "Deep learning", "Computer Networks","Security", "Social Media Analytics", "NLP", "Operating System"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+  
+  "name": "Dr. Nataasha Raul",
+  "email": "nataasharaul@spit.ac.in",
+  "department": "Computer Engineering",
+  "designation": "Associate Professor",
+  "domains": ["Machine Learning", "Security", "Behavioural Biometrics", "Cryptography", "Algorithms"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+  
+  "name": "Dr. Rupali Sawant",
+  "email": "rupali_sawant@spit.ac.in",
+  "department": "Computer Engineering",
+  "designation": "Associate Professor",
+  "domains": ["Machine Learning","Deep Learning","Healthcare","NLP", "Data Science", "Big Data Analytics", "AI", "Data warehousing and Mining"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+  
+  "name": "Prof. Abhijeet Salunke",
+  "email": "abhijeet_salunke@spit.ac.in",
+  "department": "Computer Engineering",
+  "designation": "Associate Professor",
+  "domains": ["Networks, Security", "Mobile Communication and Computing", "Machine Learning"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+  
+  "name": "Prof. Jignesh Sisodia",
+  "email": "jsisodia@spit.ac.in",
+  "department": "Computer Engineering",
+  "designation": "Associate Professor",
+  "domains": ["Machine Learning","Deep Learning", "Computer Vision", "Image and Video Processing", "Healthcare", "Computer Networks"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+  
+  "name": "Prof. Siddhartha Chandra",
+  "email": "siddhartha_chandra@spit.ac.in",
+  "department": "Computer Engineering",
+  "designation": "Associate Professor",
+  "domains": ["Data Science", "Data Structures", "Algorithms", "Image Processing", "computer vision","NLP", "Programming", "automation", "monitoring", "visualization"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+  
+  "name": "Prof. Aditya Rajmane",
+  "email": "aditya.rajmane@spit.ac.in",
+  "department": "Computer Engineering",
+  "designation": "Associate Professor",
+  "domains": ["Data Science and Visualization", "intelligent systems","AI/ML algorithms", "Quantum computing"," Parallel and Distributed systems"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+  
+  "name": "Dr. Anuj Tawari",
+  "email": "atawari279@gmail.com",
+  "department": "Computer Engineering",
+  "designation": "Associate Professor",
+  "domains": ["Dynamic Algorithms", "Circuit Complexity"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+  
+  "name": "Dr. D. R. Kalbande",
+  "email": "drkalbande@spit.ac.in",
+  "department": "Computer Science and Engineering Department [AIML and DS]",
+  "designation": "Professor",
+  "domains":[ "Soft Computing", "Machine Learning", "Deep Learning", "User Experience Design", "Generative AI and Explainable AI","Artificial Intelligence"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+  
+  "name": "Dr. Sujata Kulkarni",
+  "email": "sujata_kulkarni@spit.ac.in",
+  "department": "Computer Science and Engineering Department [AIML and DS]",
+  "designation": "Associate professor",
+  "domains": ["Image processing and ML", "Network security", "Open AI"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+  
+  "name": "Prof.Dayanand Ambawade",
+  "email": "dd_ambawade@spit.ac.in",
+  "department": "Computer Science and Engineering Department [AIML and DS]",
+  "designation": "Associate professor",
+  "domains": ["Blockchain Technology","Computer Networks" , "cyber security"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+  
+  "name": "Prof. Sheetal Chaudhari",
+  "email": "sheetal_chaudhari@spit.ac.in",
+  "department": "Computer Science and Engineering Department [AIML and DS]",
+  "designation": "Assistant Professor",
+  "domains":[ "Blockchain Technology", "Operating systems", "Distributed systems","Computer Networks and Artificial Intelligence"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+  
+  "name": "Prof. Renuka Pawar",
+  "email": "renuka_pawar@spit.ac.in",
+  "department": "Computer Science and Engineering Department [AIML and DS]",
+  "designation": "Assistant Professor",
+  "domains": ["Cyber Security","IoT security","Digital Forensics","Blockchain" ,"Virtual Reality","Agumented Reality", "Image Processing","Artificial Intelligence", "Machine learning", "Cloud computing"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+  
+  "name": "Prof. Varsha Hole",
+  "email": "varsha_hole@spit.ac.in",
+  "department": "Computer Science and Engineering Department [AIML and DS]",
+  "designation": "Assistant Professor",
+  "domains": ["Artificial Intelligence", "Machine learning", "Natural language processing", "Image processing"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+ 
+  "name": "Prof. Aparna Halbe",
+  "email": "aparna_halbe@spit.ac.in",
+  "department": "Computer Science and Engineering Department [AIML and DS]",
+  "designation": "Assistant Professor",
+  "domains": ["Machine learning", "Natural language processing", "Data analytics", "Image Processing"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+  
+  "name": "Prof. Nikahat Mulla",
+  "email": "nikahat_kazi@spit.ac.in",
+  "department": "Computer Science and Engineering Department [AIML and DS]",
+  "designation": "Assistant Professor",
+  "domains": ["Deep Learning", "Natural Language Processing", "Soft Computing"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+  
+  "name": "Dr Aarti Karande",
+  "email": "aartimkarande@spit.ac.in",
+  "department": "Computer Science and Engineering Department [AIML and DS]",
+  "designation": "Assistant Professor",
+  "domains": ["Machine Learning", "Deep Learning","Cloud Computing"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+  
+  "name": "Dr. Suhas Kakade",
+  "email": "suhas_kakade@spit.ac.in",
+  "department": "Computer Science and Engineering Department [AIML and DS]",
+  "designation": "Assistant Professor",
+  "domains": ["Haptics", "Machine Learning", "Deep Learning", "Image Processing", "Signal Processing", "Embedded Systems"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+  
+  "name": "Prof. Vipul Kushwaha",
+  "email": "vipul_kushwaha@spit.ac.in",
+  "department": "Computer Science and Engineering Department [AIML and DS]",
+  "designation": "Assistant Professor",
+  "domains": ["Internet of things","cloud computing"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+  
+  "name": "Prof.Noshin Sabuwala",
+  "email": "noshinsabuwala@spit.ac.in",
+  "department": "Computer Science and Engineering Department [AIML and DS]",
+  "designation": "Assistant Professor",
+  "domains": ["Machine learning","Deep Learning"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+},
+{
+
+  "name": "Prof. Sakina Shaikh",
+  "email": "sakina_shaikh@spit.ac.in",
+  "department": "Computer Science and Engineering Department [AIML and DS]",
+  "designation": "Assistant Professor",
+  "domains": ["Machine learning","Deep Learning","Cyber Security"],
+  "count": 3,
+  "teams" : [],
+  "password" : ""
+}]

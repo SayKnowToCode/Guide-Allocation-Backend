@@ -19,6 +19,7 @@ app.use(express.json());
 app.use('/register', require('./routes/register'));
 app.use('/login', require('./routes/login'));
 app.use('/profList', require('./routes/profList'));
+app.use('/sendGuideRequest', require('./routes/sendGuideRequest'));
 
 app.use(errorHandler);
 
