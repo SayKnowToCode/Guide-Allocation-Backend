@@ -26,6 +26,9 @@ const guideSchema = new Schema ({
     teams : {
         type : [String]
     },
+    acceptedTeams : {
+        type : [String]
+    },
     required: ["name", "email", "domains", "count","password"]
 })
 
