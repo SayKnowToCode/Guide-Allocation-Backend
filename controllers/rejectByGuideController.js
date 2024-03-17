@@ -8,6 +8,11 @@ const handleFunc = async (req,res) => {
         // Fetch all documents from the Guide collection
         const guide = await Guide.findOne({name : facultyName}).exec();
 
+        if (!guide) {
+            // Handle case where guide is not found
+            return res.status(404).json({ error: 'Guide not found' });
+          }
+
         const newArray = (guide.teams).filter((team) => team !== teamName)
         guide.teams = newArray;
         const result = await guide.save()
