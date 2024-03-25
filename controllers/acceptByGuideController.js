@@ -8,6 +8,13 @@ const handleFunc = async (req,res) => {
         const guide = await Guide.findOne({name : facultyName}).exec();
         
         guide.count -= 1;
+
+        // if(guide.count < 0)
+        // {
+        //     res.status(200).json({"message" : "No more slots available"})
+        //     console.log("No more slots available");
+        // }
+
         const newArray = (guide.teams).filter((team) => team !== teamName)
         guide.teams = newArray;
         if(guide.acceptedTeams.length > 0)

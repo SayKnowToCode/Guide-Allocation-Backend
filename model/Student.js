@@ -37,7 +37,10 @@ const userSchema = new Schema({
             type: Boolean,
             default: false
         }
-    } ]     
+    } ] ,
+    guides : {type: [String]},
+    acceptedGuides: {type: [String]}
+
 });
 
 module.exports = mongoose.model('Student', userSchema)

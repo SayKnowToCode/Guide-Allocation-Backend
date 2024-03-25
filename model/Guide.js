@@ -3,13 +3,16 @@ const Schema = mongoose.Schema
 
 const guideSchema = new Schema ({
     name : {
-        type : String
+        type : String,
+        required : true
     },
     password : {
         type : String
+        // required : true
     },
     email : {
-        type : String
+        type : String,
+        required : true
     },
     department : {
         type : String
@@ -18,18 +21,20 @@ const guideSchema = new Schema ({
         type : String
     },
     domains : {
-        type : [String]
+        type : [String],
+        required : true
     },
     count : {
-        type : Number
+        type : Number,
+        required : true
     },
     teams : {
         type : [String]
     },
     acceptedTeams : {
         type : [String]
-    },
-    required: ["name", "email", "domains", "count","password"]
+    }
+    
 })
 
 module.exports = mongoose.model('Guide', guideSchema)
