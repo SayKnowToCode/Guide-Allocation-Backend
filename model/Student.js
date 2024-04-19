@@ -38,8 +38,13 @@ const userSchema = new Schema({
             default: false
         }
     } ] ,
-    guides : {type: [String]},
-    acceptedGuides: {type: [String]}
+    guides : {
+        type: [String]
+    },
+    acceptedGuide: {
+        type: String,
+        default: ''
+    }
 
 });
 
