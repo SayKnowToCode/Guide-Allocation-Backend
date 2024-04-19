@@ -4,22 +4,22 @@ const Schema = mongoose.Schema
 const userSchema = new Schema({
     teamName: {
         type: String,
-        required: true, 
+        required: true,
         unique: true // Ensure team names are unique
         // But this unique is case sensitive, we need to handle this
     },
-    membersList: [ {
+    membersList: [{
         name: {
             type: String,
             required: true
         },
         email: {
             type: String,
-            required : true,
+            required: true,
             default: "student@email.com"
         },
         UID: {
-            type: Number,       
+            type: Number,
         },
         password: {
             type: String,
@@ -27,7 +27,7 @@ const userSchema = new Schema({
             default: "empty"
         },
         branch: {
-            type: String,  
+            type: String,
         },
         isTeamLeader: {
             type: Boolean,
@@ -37,11 +37,15 @@ const userSchema = new Schema({
             type: Boolean,
             default: false
         }
-    } ] ,
-    guides : {
+    }],
+    guides: {
         type: [String]
     },
     acceptedGuide: {
+        type: String,
+        default: ''
+    },
+    expertAllocated: {
         type: String,
         default: ''
     }

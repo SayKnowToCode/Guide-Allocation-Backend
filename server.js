@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const http = require('http');
-const {Server} = require('socket.io');
+const { Server } = require('socket.io');
 const corsOptions = require('./config/corsOptions');
 const errorHandler = require('./middleware/errorHandler');
 const credentials = require('./middleware/credentials');
@@ -14,10 +14,10 @@ const PORT = process.env.PORT || 3500;
 const server = http.createServer(app);
 
 const io = new Server(server, {
-  cors: {
-    origin: "http://localhost:3000",
-    methods: ["GET", "POST", "PUT"],
-  },
+    cors: {
+        origin: "http://localhost:3000",
+        methods: ["GET", "POST", "PUT"],
+    },
 });
 
 
@@ -35,11 +35,11 @@ io.on('connection', (socket) => {
     });
 });
 
-const emitChanges = (endpoint,payload) => {
-    io.emit(endpoint,payload);
+const emitChanges = (endpoint, payload) => {
+    io.emit(endpoint, payload);
 }
 
-app.use((req,res,next) => {
+app.use((req, res, next) => {
     req.emitChanges = emitChanges;
     next();
 });
@@ -50,6 +50,7 @@ app.use('/profList', require('./routes/profList'));
 app.use('/sendGuideRequest', require('./routes/sendGuideRequest'));
 app.use('/acceptByGuide', require('./routes/acceptByGuide'));
 app.use('/rejectByGuide', require('./routes/rejectByGuide'));
+app.use('/externalGuide', require('./routes/externalGuide'));
 
 app.use(errorHandler);
 
