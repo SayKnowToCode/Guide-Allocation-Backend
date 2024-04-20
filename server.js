@@ -51,6 +51,7 @@ app.use('/sendGuideRequest', require('./routes/sendGuideRequest'));
 app.use('/acceptByGuide', require('./routes/acceptByGuide'));
 app.use('/rejectByGuide', require('./routes/rejectByGuide'));
 app.use('/externalGuide', require('./routes/externalGuide'));
+app.use('/evaluation', require('./routes/evaluation'));
 
 app.use(errorHandler);
 

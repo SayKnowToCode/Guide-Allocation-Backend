@@ -31,9 +31,20 @@ const guideSchema = new Schema({
     teams: {
         type: [String]
     },
-    acceptedTeams: {
-        type: [String]
-    },
+    acceptedTeams: [{
+        teamName: {
+            type: String
+        },
+        phase1Marks: {
+            type: Number
+        },
+        phase2Marks: {
+            type: Number
+        },
+        phase3Marks: {
+            type: Number
+        }
+    }],
     teamsAllocatedByMe: [{
         teamName: {
             type: String
@@ -48,6 +59,15 @@ const guideSchema = new Schema({
         },
         allocatedBy: {
             type: String
+        },
+        phase1Marks: {
+            type: Number
+        },
+        phase2Marks: {
+            type: Number
+        },
+        phase3Marks: {
+            type: Number
         }
     }]
 

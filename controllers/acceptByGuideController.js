@@ -22,14 +22,14 @@ const handleFunc = async (req, res) => {
 
         if (guide.acceptedTeams.length > 0) {
             (guide.acceptedTeams).find((team) => {
-                if (team === teamName) {
+                if (team.teamName === teamName) {
                     res.status(200).json({ "message": "Already accepted" })
                     return;
                 }
             })
         }
         else {
-            guide.acceptedTeams = [...guide.acceptedTeams, teamName];
+            guide.acceptedTeams.push({ teamName: teamName });
             team.acceptedGuide = facultyName;
             team.guides = [];
             await guide.save()

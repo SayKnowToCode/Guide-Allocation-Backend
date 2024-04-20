@@ -48,8 +48,37 @@ const userSchema = new Schema({
     expertAllocated: {
         type: String,
         default: ''
-    }
+    },
+    phase1: {
+        marksByGuide: {
+            type: Number,
 
+        },
+        marksByExternal: {
+            type: Number,
+
+        }
+    },
+    phase2: {
+        marksByGuide: {
+            type: Number,
+
+        },
+        marksByExternal: {
+            type: Number,
+
+        }
+    },
+    phase3: {
+        marksByGuide: {
+            type: Number,
+
+        },
+        marksByExternal: {
+            type: Number,
+
+        }
+    }
 });
 
 module.exports = mongoose.model('Student', userSchema)
