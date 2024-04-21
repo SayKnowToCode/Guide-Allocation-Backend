@@ -1,6 +1,6 @@
 const Guide = require('../model/Guide')
 
-const sendData = async (req,res) => {
+const sendData = async (req, res) => {
 
     try {
         // Fetch all documents from the Guide collection
@@ -22,7 +22,7 @@ const sendData = async (req,res) => {
             message: 'Error fetching data'
         });
     }
-
+    console.log("List sent successfully ");
 }
 
-module.exports = {sendData}
+module.exports = { sendData }

@@ -19,13 +19,8 @@ const sendData = async (req, res) => {
         }
 
         else {
-            if (guide.teams.length > 0) {
-                (guide.teams).find((team) => {
-                    if (team === teamName) {
-                        res.status(200).json({ "message": "Request already sent" })
-                        return;
-                    }
-                })
+            if (guide.teams.includes(teamName)) {
+                console.log("Already requested")
             }
 
             else {
@@ -34,7 +29,7 @@ const sendData = async (req, res) => {
                 await guide.save()
                 await team.save()
                 req.emitChanges(`RequestFor${guide.name}`, guide)
-                res.status(200).json({ "message": "Request sent successfully" });
+                res.status(200).json(team);
             }
             console.log("Successful request");
         }

@@ -9,24 +9,17 @@ const handleFunc = async (req, res) => {
         const guide = await Guide.findOne({ name: facultyName }).exec();
         const team = await Student.findOne({ teamName: teamName }).exec();
 
+        if (guide.count === 0) {
+            res.status(200).json({ "message": "No more slots available" })
+            return;
+        }
         guide.count -= 1;
-
-        // if(guide.count < 0)
-        // {
-        //     res.status(200).json({"message" : "No more slots available"})
-        //     console.log("No more slots available");
-        // }
 
         const newArray = (guide.teams).filter((team) => team !== teamName)
         guide.teams = newArray;
 
-        if (guide.acceptedTeams.length > 0) {
-            (guide.acceptedTeams).find((team) => {
-                if (team.teamName === teamName) {
-                    res.status(200).json({ "message": "Already accepted" })
-                    return;
-                }
-            })
+        if (guide.acceptedTeams.includes(teamName)) {
+            console.log("Already present in accepted teams");
         }
         else {
             guide.acceptedTeams.push({ teamName: teamName });
@@ -38,6 +31,21 @@ const handleFunc = async (req, res) => {
             res.status(200).json(guide);
         }
         console.log("Successful accept");
+
+        if (guide.count === 0) {
+            req.emitChanges(`GuideFull`, {})
+        }
+
+        const guides = await Guide.find({ teams: { $in: [teamName] } })
+        guides.forEach(async (guide) => {
+            const newArray = (guide.teams).filter((team) => team !== teamName)
+            guide.teams = newArray;
+            await guide.save()
+            req.emitChanges(`TeamAcceptedFor${guide.name}`, guide)
+        })
+
+        console.log("All requests removed");
+
     } catch (error) {
         // Handle errors and send an error response
         console.error('Error fetching data:', error);
