@@ -9,6 +9,8 @@ const handleFunc = async (req, res) => {
         const guide = await Guide.findOne({ name: facultyName }).exec();
         const team = await Student.findOne({ teamName: teamName }).exec();
 
+        // Need to handle the case where some other guide has already accepted the team
+
         if (guide.count === 0) {
             res.status(200).json({ "message": "No more slots available" })
             return;

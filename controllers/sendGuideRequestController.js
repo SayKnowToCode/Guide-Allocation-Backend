@@ -14,7 +14,7 @@ const sendData = async (req, res) => {
         const wrong2 = team.acceptedGuide !== '' ? true : false
 
         if (wrong1 || wrong2) {
-            res.status(200).json({ "message": "Already present in accepted teams" })
+            // res.status(200).json({ "message": "Already present in accepted teams" })
             console.log("Already present in accepted teams");
         }
 
@@ -28,7 +28,7 @@ const sendData = async (req, res) => {
                 team.guides = [...team.guides, facultyName];
                 await guide.save()
                 await team.save()
-                req.emitChanges(`RequestFor${guide.name}`, guide)
+                req.emitChanges(`RequestFor${guide.name}`, { guide, team })
                 res.status(200).json(team);
             }
             console.log("Successful request");
