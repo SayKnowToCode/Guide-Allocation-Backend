@@ -14,6 +14,7 @@ const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
 const Submission = require('./model/Submission');
+const Download = require('./model/Download');
 
 const server = http.createServer(app);
 
@@ -101,6 +102,34 @@ app.post('/submissions', upload.single('file'), async (req, res) => {
     }
 });
 
+app.post('/docs', upload.single('file'), async (req, res) => {
+    console.log('File uploaded');
+    const file = req.file;
+    if (!file) {
+        return res.status(400).json({ message: 'No file uploaded' });
+    }
+    const { fileName } = req.body;
+
+    try {
+        const check = await Download.findOne({ fileName: fileName });
+        if (check) {
+            console.log('Doc already present');
+            res.status(200).json({ message: 'Doc already present' });
+        } else {
+            const download = new Download({
+                fileName: fileName,
+                fileData: file.buffer // Store file data as a Buffer
+            });
+            await download.save();
+            console.log('Download saved successfully');
+            res.status(200).json({ message: 'Download saved successfully' });
+        }
+    } catch (error) {
+        console.error('Error saving download:', error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+});
+
 app.get('/fetchSubmissions', async (req, res) => {
     console.log('Fetching submissions');
     const { teamName, facultyName } = req.query;
@@ -118,18 +147,22 @@ app.get('/fetchSubmissions', async (req, res) => {
     }
 });
 
-// Serve the uploaded files
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.get('/download/:fileName', async (req, res) => {
 
-app.get('/download/instruction', (req, res) => {
-    console.log("Download instruction")
-    const file = path.join(__dirname, 'downloads', 'instruction.pdf');
-    const stat = fs.statSync(file);
-    res.setHeader('Content-Length', stat.size);
-    res.setHeader('Content-Type', 'application/pdf');
-    res.setHeader('Content-Disposition', 'attachment; filename=instruction.pdf');
-    const readStream = fs.createReadStream(file);
-    readStream.pipe(res);
+    const { fileName } = req.params;
+
+    try {
+        const download = await Download.findOne({ fileName: fileName });
+        if (!download) {
+            return res.status(404).json({ message: 'File not found' });
+        }
+        res.set('Content-Type', 'application/json');
+        res.send(download);
+    }
+    catch (error) {
+        console.error('Error fetching download:', error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
 });
 
 app.use(errorHandler);
