@@ -51,6 +51,7 @@ app.use('/login', require('./routes/login'));
 app.use('/profList', require('./routes/profList'));
 app.use('/getTeam', require('./routes/getTeam'));
 app.use('/setDate', require('./routes/setDate'));
+app.use('/getDate', require('./routes/getDate'));
 app.use('/sendGuideRequest', require('./routes/sendGuideRequest'));
 app.use('/acceptByGuide', require('./routes/acceptByGuide'));
 app.use('/rejectByGuide', require('./routes/rejectByGuide'));

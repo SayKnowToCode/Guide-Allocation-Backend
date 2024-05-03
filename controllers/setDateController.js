@@ -2,9 +2,6 @@ const Dates = require('../model/Date'); // Import utcToZonedTime function from d
 
 const setDateInfo = async (req, res) => {
     const { startDate, endDate, topic } = req.body;
-    console.log(startDate);
-    console.log(endDate);
-    console.log(topic);
 
     try {
         // Convert incoming dates to UTC before storing them
