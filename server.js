@@ -12,6 +12,8 @@ const connectDB = require('./config/dbConn');
 const PORT = process.env.PORT || 3500;
 const multer = require('multer');
 const path = require('path');
+const fs = require('fs');
+const Submission = require('./model/Submission');
 
 const server = http.createServer(app);
 
@@ -58,33 +60,78 @@ app.use('/rejectByGuide', require('./routes/rejectByGuide'));
 app.use('/externalGuide', require('./routes/externalGuide'));
 app.use('/evaluation', require('./routes/evaluation'));
 
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, 'uploads/');
-    },
-    filename: function (req, file, cb) {
-        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
-    }
-});
+const storage = multer.memoryStorage(); // Use memory storage instead of disk storage
 
 const upload = multer({ storage: storage });
 
-// Handle file upload
-app.post('/upload', upload.single('file'), (req, res) => {
-    if (!req.file) {
-        return res.status(400).send('No files were uploaded.');
+app.post('/submissions', upload.single('file'), async (req, res) => {
+    console.log('File uploaded');
+    const file = req.file;
+    if (!file) {
+        return res.status(400).json({ message: 'No file uploaded' });
     }
-    const { facultyName, teamName } = req.body;
-    const data = {
-        teamName,
-        fileName: req.file.filename
+    const { teamName, facultyName, fileName } = req.body;
+
+    try {
+        const check = await Submission.findOne({ to: facultyName, from: teamName });
+        if (check) {
+            check.submissions.push({
+                fileName: fileName,
+                fileData: file.buffer // Store file data as a Buffer
+            });
+            await check.save();
+            console.log('Submission updated successfully');
+            res.status(200).json({ message: 'Submission saved successfully' });
+        } else {
+            const submission = new Submission({
+                to: facultyName,
+                from: teamName,
+                submissions: [{
+                    fileName: fileName,
+                    fileData: file.buffer // Store file data as a Buffer
+                }]
+            });
+            await submission.save();
+            console.log('Submission saved successfully');
+            res.status(200).json({ message: 'Submission saved successfully' });
+        }
+    } catch (error) {
+        console.error('Error saving submission:', error);
+        res.status(500).json({ message: 'Internal server error' });
     }
-    req.emitChanges(`fileUploadedFor${facultyName}`, data);
-    res.status(200).json({ message: 'File uploaded successfully' });
+});
+
+app.get('/fetchSubmissions', async (req, res) => {
+    console.log('Fetching submissions');
+    const { teamName, facultyName } = req.query;
+    try {
+        const submission = await Submission.findOne({ to: facultyName, from: teamName });
+        const filesArray = submission.submissions.map(submission => ({
+            fileName: submission.fileName,
+            fileData: submission.fileData
+        }));
+        res.set('Content-Type', 'application/json'); // Set appropriate content type
+        res.send(filesArray);
+    } catch (error) {
+        console.error('Error fetching submissions:', error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
 });
 
 // Serve the uploaded files
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+app.get('/download/instruction', (req, res) => {
+    console.log("Download instruction")
+    const file = path.join(__dirname, 'downloads', 'instruction.pdf');
+    const stat = fs.statSync(file);
+    res.setHeader('Content-Length', stat.size);
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', 'attachment; filename=instruction.pdf');
+    const readStream = fs.createReadStream(file);
+    readStream.pipe(res);
+});
+
 app.use(errorHandler);
 
 mongoose.connection.once('open', () => {
