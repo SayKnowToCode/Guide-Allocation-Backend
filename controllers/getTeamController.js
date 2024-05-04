@@ -5,9 +5,8 @@ const getTeamInfo = async (req, res) => {
     console.log(teamName);
     try {
         // Fetch all documents from the Guide collection
-        const team = await Student.find({ teamName: teamName });
+        const team = await Student.findOne({ teamName: teamName });
         res.status(200).json(team)
-        console.log(team);
     } catch (error) {
         // Handle errors and send an error response
         console.error('Error fetching data:', error);
